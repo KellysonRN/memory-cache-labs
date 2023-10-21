@@ -4,12 +4,25 @@
 
 Learn Time: Experiments with cache in-Memory.
 
-## Features
+
+## Context 
+
+<div style="text-align: justify">
+The main goal of this experiment is to demonstrate how using in-memory caching 
+can improve performance and efficiency when loading a list of board games. The experiment 
+will fetch data from an external data source consisting of a list of board games, 
+including information such as game id, name and Ludopedia link. By implementing an in-memory 
+caching system, my intention is to speed up access to this data, minimizing query time and 
+increasing API responsiveness.
+</div>
+  
+## Key Features
 
  - C#
  - XUnit
- - GitHub Actions
+ - Integration with an external data source
  - [Cache in-memory in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/memory)
+ - Good coding practices
 
 ## Requirements
 
