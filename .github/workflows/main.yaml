@@ -1,0 +1,45 @@
+name: MemoryCache.Labs Build
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/src/**'
+      - '**/tests/**'      
+      - '**/.github/**'
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+    
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+          fetch-depth: 0
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.x
+        
+    - name: Setup Coverage
+      run: |
+        dotnet tool update dotnet-reportgenerator-globaltool -g
+
+    - name: Restore Dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --configuration Release --no-restore      
+   
+    - name: Test
+      run: |
+        dotnet test --configuration Release --no-build --verbosity normal --collect:"XPlat Code Coverage" --results-directory ./coverage                     
+        
