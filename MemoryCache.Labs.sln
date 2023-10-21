@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FCA05698-128
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemoryCache.Labs.API", "src\MemoryCache.Labs.API\MemoryCache.Labs.API.csproj", "{C9CE5D83-DD75-4BC3-9B87-AA9A0980C7A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemoryCache.Labs.Infrastructure", "src\MemoryCache.Labs.Infrastructure\MemoryCache.Labs.Infrastructure.csproj", "{B6D817F7-207E-4C39-8B2E-7BE32A0F0250}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,9 +30,14 @@ Global
 		{C9CE5D83-DD75-4BC3-9B87-AA9A0980C7A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9CE5D83-DD75-4BC3-9B87-AA9A0980C7A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9CE5D83-DD75-4BC3-9B87-AA9A0980C7A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6D817F7-207E-4C39-8B2E-7BE32A0F0250}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6D817F7-207E-4C39-8B2E-7BE32A0F0250}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6D817F7-207E-4C39-8B2E-7BE32A0F0250}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6D817F7-207E-4C39-8B2E-7BE32A0F0250}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BC5F0216-82EC-448F-AA5B-2E08B66E8A41} = {945F4BF8-0C4F-4D9E-840A-5C6E0EE23122}
 		{C9CE5D83-DD75-4BC3-9B87-AA9A0980C7A4} = {FCA05698-1289-464B-849D-1CB06888F657}
+		{B6D817F7-207E-4C39-8B2E-7BE32A0F0250} = {FCA05698-1289-464B-849D-1CB06888F657}
 	EndGlobalSection
 EndGlobal
