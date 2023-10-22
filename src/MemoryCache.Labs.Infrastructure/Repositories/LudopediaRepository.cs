@@ -40,17 +40,20 @@ public class LudopediaRepository : ILudopediaRepository
     }
 }
 
-public record LudopediaResponse(List<BoardGameDto>? MyCollection)
+public class LudopediaResponse
 {
-    [JsonPropertyName("colecao")] public List<BoardGameDto>? MyCollection { get; set; } = MyCollection;
+    [JsonPropertyName("colecao")] 
+    public List<BoardGameDto>? MyCollection { get; set; }
 }
 
-public abstract record BoardGameDto([property: JsonPropertyName("id_jogo")]
-    int Id, string? Name, string? Link)
+public class BoardGameDto
 {
+    [JsonPropertyName("id_jogo")]
+    public int Id { get; set; }
+        
     [JsonPropertyName("nm_jogo")]
-    public string? Name { get; } = Name;
+    public string? Name { get; set; }
 
     [JsonPropertyName("link")]
-    public string? Link { get; } = Link;
+    public string? Link { get; set; }
 }
