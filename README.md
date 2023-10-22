@@ -23,7 +23,7 @@ increasing API responsiveness.
  - [Cache in-memory in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/memory)
  - [User-Secrets](https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-7.0&tabs=windows)
  - [HttpClient Factory](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/http-requests?view=aspnetcore-7.0)
- - [Ludopedia API Docs] (https://ludopedia.com.br/api/documentacao.html)
+ - [Ludopedia API Docs](https://ludopedia.com.br/api/documentacao.html)
 
 ## Next steps
 
