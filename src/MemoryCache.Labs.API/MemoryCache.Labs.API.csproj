@@ -1,9 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>2f4f488f-ff4c-43d0-8476-c6b447d53b32</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MemoryCache.Labs.Infrastructure\MemoryCache.Labs.Infrastructure.csproj"/>
+    <ProjectReference Include="..\MemoryCache.Labs.Infrastructure\MemoryCache.Labs.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
