@@ -29,17 +29,17 @@ public class CachedBoardGames : ICachedBoardGames
     {
         if (_cache.TryGetValue(CacheKey, out IReadOnlyList<BoardGameCacheRecord?>? result))
         {
-            if (result is not null)
+            if (result is not null && result.Any())
             {
                 return result;
             }
         }
 
-        var departments = await _ludopediaRepository.GetAll();
+        var boardGameDtos = await _ludopediaRepository.GetAll();
             
-        result = departments.Select(x => new BoardGameCacheRecord(x.Id, x.Name, x.Link)).ToList();
+        result = (boardGameDtos ?? Array.Empty<BoardGameDto>()).Select(x => new BoardGameCacheRecord(x.Id, x.Name, x.Link)).ToList();
             
-        var options = new MemoryCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromDays(1));
+        var options = new MemoryCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromSeconds(60));
             
         _cache.Set(CacheKey, result, options);
 
@@ -58,4 +58,4 @@ public class CachedBoardGames : ICachedBoardGames
     }
 }
 
-public record BoardGameCacheRecord(int Id, string Name, string Link);
+public record BoardGameCacheRecord(int Id, string? Name, string? Link);
