@@ -4,7 +4,6 @@
 
 Learn Time: Experiments with cache in-Memory.
 
-
 ## Context 
 
 <div style="text-align: justify">
@@ -22,7 +21,13 @@ increasing API responsiveness.
  - XUnit
  - Integration with an external data source
  - [Cache in-memory in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/memory)
- - Good coding practices
+ - [User-Secrets](https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-7.0&tabs=windows)
+ - [HttpClient Factory](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/http-requests?view=aspnetcore-7.0)
+ - [Ludopedia API Docs] (https://ludopedia.com.br/api/documentacao.html)
+
+## Next steps
+
+ - Increase test code coverage
 
 ## Requirements
 
@@ -32,12 +37,24 @@ The project requires [.NET 6.0](https://dotnet.microsoft.com/en-us/download/dotn
 
 Tested on:
 
-- Visual Studio Code (1.83.11)
 - Rider 2023.2.2
 
 ## Useful commands
 
 From the terminal/shell/command line tool, use the following commands to build, test and run the API.
+
+- Enable User-Secrets
+
+```shell
+
+# From the MemoryCache.Labs.API root
+
+dotnet user-secrets init
+
+# To generate a secret read the ludopedia API docs above.
+dotnet user-secrets set "LUDOPEDIA_SECRET" "xyz@123#456"
+
+```
 
 - ### Build the project
 
