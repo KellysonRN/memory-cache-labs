@@ -18,6 +18,15 @@ public class BoardGamesController : ControllerBase
         _cachedBoardGames = cachedBoardGames;
     }
     
+    [HttpGet("")]
+    public async Task<ActionResult> GetMyCollection()
+    {
+        _logger.LogInformation($"GetMyCollection");
+        
+        var myCollection = await _cachedBoardGames.GetAll();
+        return !myCollection.Any() ? NoContent() : Ok(myCollection);
+    }
+    
     [HttpGet("{id:int}")]
     public async Task<ActionResult> GetCollectionById(int id)
     {
@@ -25,5 +34,15 @@ public class BoardGamesController : ControllerBase
         
         var myCollection = await _cachedBoardGames.GetBoardGamesCollectionById(id);
         return myCollection is null ? NoContent() : Ok(myCollection);
+    }
+    
+    [HttpDelete()]
+    public ActionResult InvalidateCache()
+    {
+        _logger.LogInformation($"InvalidateCache");
+        
+        _cachedBoardGames.InvalidateCache();
+        
+        return Ok();
     }
 }
