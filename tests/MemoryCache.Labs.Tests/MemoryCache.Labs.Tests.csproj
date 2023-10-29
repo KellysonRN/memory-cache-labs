@@ -29,6 +29,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\MemoryCache.Labs.API\MemoryCache.Labs.API.csproj" />
+    <ProjectReference Include="..\..\src\MemoryCache.Labs.InMemoryCopyDatabase\MemoryCache.Labs.InMemoryCopyDatabase.csproj" />
   </ItemGroup>
 
 </Project>
