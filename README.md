@@ -19,6 +19,7 @@ increasing API responsiveness.
 
  - C#
  - XUnit
+ - [Stryker Mutator](https://stryker-mutator.io/docs/stryker-net/introduction/)
  - Integration with an external data source
  - [Cache in-memory in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/memory)
  - [User-Secrets](https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-7.0&tabs=windows)
