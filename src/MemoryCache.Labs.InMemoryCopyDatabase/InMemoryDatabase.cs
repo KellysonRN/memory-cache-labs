@@ -11,7 +11,9 @@ public class InMemoryDatabase : IMemoryDatabase
     public BoardGameCacheRecord AddData(object key, BoardGameCacheRecord data)
     {
         if (_copyDatabase.TryAdd(key, data))
+        {
             return GetData(key);
+        }
 
         throw new RecordAlreadyExistsException();
     }

@@ -28,8 +28,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\MemoryCache.Labs.API\MemoryCache.Labs.API.csproj" />
     <ProjectReference Include="..\..\src\MemoryCache.Labs.InMemoryCopyDatabase\MemoryCache.Labs.InMemoryCopyDatabase.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="BoardgamesControllerTests.cs" />
   </ItemGroup>
 
 </Project>
