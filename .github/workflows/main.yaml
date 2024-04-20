@@ -28,10 +28,6 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 6.0.x
-        
-    - name: Setup Coverage
-      run: |
-        dotnet tool update dotnet-reportgenerator-globaltool -g
 
     - name: Restore Dependencies
       run: dotnet restore
