@@ -15,15 +15,34 @@ on:
     
 jobs:
   build:
-    name: Summary Coverage
+    name: Build
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4      
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+          fetch-depth: 0
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.x
+        
+    - name: Setup Coverage
+      run: |
+        dotnet tool update dotnet-reportgenerator-globaltool -g
+
+    - name: Restore Dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --configuration Release --no-restore      
+   
     - run: dotnet test --configuration Release --no-build --verbosity normal --results-directory "test-results" --collect:"Code Coverage"
     - run: dotnet tool update --global dotnet-coverage
     - run: dotnet-coverage merge --output test-result.cobertura.xml --output-format cobertura "test-results/**/*.coverage"
     - run: dotnet tool install --global dotnet-reportgenerator-globaltool
     - run: reportgenerator -reports:test-result.cobertura.xml -targetdir:coverage-report -reporttypes:"MarkdownSummaryGithub"
-    - run: cat coverage-report/SummaryGithub.md >> $GITHUB_STEP_SUMMARY                
+    - run: cat coverage-report/SummaryGithub.md >> $GITHUB_STEP_SUMMARY   
         
